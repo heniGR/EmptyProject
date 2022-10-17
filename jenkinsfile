@@ -2,31 +2,33 @@ pipeline {
     agent any
 
     stages {
+       stage('Pulling') {
+        
+        	steps{
+        	
+        	
+        	git branch: 'master',
+        	url : 'https://github.com/heniGR/EmptyProject.git'
+        	   
+        	}   
+        }
         stage('Compile Stage') {
         
         	steps{
         	
-        		withMaven( : 'M2_HOME'){
+        		
         			sh 'mvn clean compile'
-        	   }
+        	   
         	}   
         }
-        stage('Testing Stage') {
-        
-        	steps{
-        	
-        		withMaven( : 'M2_HOME'){
-        			sh 'mvn test'
-        	   }
-        	}   
-        }
+      
        stage('Deployement Stage') {
         
         	steps{
         	
-        		withMaven( : 'M2_HOME'){
+        	
         			sh 'mvn deploy'
-        	   }
+        	   
         	}   
         }
     }
