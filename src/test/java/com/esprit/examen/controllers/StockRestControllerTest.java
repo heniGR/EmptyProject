@@ -28,7 +28,14 @@ class StockRestControllerTest {
 		assertNotNull(savedStock.getLibelleStock());
 		//stockImpl.deleteStock(savedStock.getIdStock());
 	}
-
+	
+	@Test
+	public void testDeleteStock() {
+		Stock s = new Stock("stock test",100,20);
+		Stock savedStock= stockImpl.addStock(s);
+		stockImpl.deleteStock(savedStock.getIdStock());
+		assertNull(stockImpl.retrieveStock(savedStock.getIdStock()));
+	}
 	
 
 }
