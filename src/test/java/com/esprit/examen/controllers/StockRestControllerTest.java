@@ -16,16 +16,6 @@ class StockRestControllerTest {
 	
 	@Autowired
 	StockServiceImpl stockImpl;
-	@Test
-	void testGetStocks() {
-		
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testRetrieveStock() {
-		fail("Not yet implemented");
-	}
 
 	@Test
 	public void testAddStock() {
@@ -39,14 +29,6 @@ class StockRestControllerTest {
 		//stockImpl.deleteStock(savedStock.getIdStock());
 	}
 
-	@Test
-	void testRemoveStock() {
-		fail("Not yet implemented");
-	}
-
-	@Test
-	void testModifyStock() {
-		fail("Not yet implemented");
-	}
+	
 
 }
